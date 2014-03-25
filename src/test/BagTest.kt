@@ -21,17 +21,17 @@ fun createBagTests() {
         //bag.details()
     }
 
-    Test("ArrayBagTest", {() ->
+    Test("ArrayBag", {() ->
         val bag = ArrayBag<Int>()
         basicBagTest(bag)
     })
 
-    Test("LinkedBagTest", {() ->
+    Test("LinkedBag", {() ->
         val bag = LinkedBag<Int>()
         basicBagTest(bag)
     })
 
-    Test("ArrayBagSizeTest", {() ->
+    Test("ArrayBagSize", {() ->
         val bag = ArrayBag<Int>()
         while (bag.size != bag.capacity) {
             bag.add(1)

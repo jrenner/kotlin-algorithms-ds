@@ -16,9 +16,12 @@ public class Test(val name: String, testFunc: () -> Unit) {
 fun main(args: Array<String>) {
 
     createBagTests()
+    createQueueTests()
 
     for (test in tests) {
         println("Running test: ${test.name}")
         test.runTest()
     }
 }
+
+

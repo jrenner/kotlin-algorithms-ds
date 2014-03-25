@@ -8,7 +8,13 @@ public trait Queue<T> : Iterable<T> {
 
     fun get(): T
 
+    fun clear()
+
     fun isEmpty(): Boolean
 
     fun size(): Int
+
+    fun details()
+
+    fun toList() : List<out T>
 }

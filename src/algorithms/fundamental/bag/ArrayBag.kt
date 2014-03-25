@@ -2,28 +2,18 @@ package algorithms.fundamental.bag
 
 import java.util.ArrayList
 import util.plus
+import util.NonNullArrayIterator
 
+/** A Bag with a backing array */
 public class ArrayBag<T> : Bag<T> {
 
     private val DEFAULT_INIT_CAPACITY = 8
     private val EXPAND_MULTIPLE = 1.5f
 
-    private var items: Array<T> = Array<Any?>(DEFAULT_INIT_CAPACITY, { null }) as Array<T>
+    private var items = Array<Any?>(DEFAULT_INIT_CAPACITY, { null }) as Array<T?>
 
     override fun iterator(): Iterator<T> {
-        return ArrayBagIterator<T>()
-    }
-
-    private inner class ArrayBagIterator<T> : Iterator<T> {
-        var head = 0
-
-        override fun next(): T {
-            return items[head++] as T
-        }
-
-        override fun hasNext(): Boolean {
-            return items[head] != null
-        }
+        return NonNullArrayIterator<T>(items)
     }
 
     private inner class BagIterator<T> : Iterator<T> {
@@ -45,7 +35,7 @@ public class ArrayBag<T> : Bag<T> {
             }
         }
         // array out of space, expand it
-        items = items.copyOf((items.size * EXPAND_MULTIPLE).toInt()) as Array<T>
+        items = items.copyOf((items.size * EXPAND_MULTIPLE).toInt()) as Array<T?>
         add(item)
     }
 
