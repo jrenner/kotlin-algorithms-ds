@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
 
     createBagTests()
     createQueueTests()
+    createLinkedListTests()
 
     for (test in tests) {
         println("Running test: ${test.name}")

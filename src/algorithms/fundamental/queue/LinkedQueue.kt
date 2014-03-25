@@ -1,6 +1,6 @@
 package algorithms.fundamental.queue
 
-import java.util.LinkedList
+import algorithms.fundamental.list.LinkedList
 
 /** A Queue with a backing linked list */
 public class LinkedQueue<T> : Queue<T> {

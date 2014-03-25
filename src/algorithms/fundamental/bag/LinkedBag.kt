@@ -1,7 +1,7 @@
 package algorithms.fundamental.bag
 
-import java.util.LinkedList
 import util.plus
+import algorithms.fundamental.list.LinkedList
 
 /** A Bag with a backing linked list */
 public class LinkedBag<T> : Bag<T> {

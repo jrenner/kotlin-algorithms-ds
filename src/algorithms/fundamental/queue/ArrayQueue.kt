@@ -69,13 +69,13 @@ public class ArrayQueue<T> : Queue<T> {
             if (item != null) newArray[i++] = item
         }
         items = newArray
-        for (i in items.indices) {
+        for (j in items.indices) {
             if (items[i] != null) {
                 first = i
                 break
             }
         }
-        for (i in items.lastIndex downTo 0) {
+        for (j in items.lastIndex downTo 0) {
             if (items[i] != null) {
                 last = i
                 break
