@@ -21,15 +21,15 @@ fun createBagTests() {
         //bag.details()
     }
 
-    Test("ArrayBag", {() ->
+    BenchmarkTest("ArrayBag", {() ->
         val bag = ArrayBag<Int>()
         basicBagTest(bag)
-    })
+    }, BenchmarkTest.defaultLoopCount)
 
-    Test("LinkedBag", {() ->
+    BenchmarkTest("LinkedBag", {() ->
         val bag = LinkedBag<Int>()
         basicBagTest(bag)
-    })
+    }, BenchmarkTest.defaultLoopCount)
 
     Test("ArrayBagSize", {() ->
         val bag = ArrayBag<Int>()

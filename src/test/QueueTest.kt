@@ -59,14 +59,14 @@ fun createQueueTests() {
         assert(count == max, "iteration failed to match max, count: $count, max $max")
     }
 
-    Test("ArrayQueue", { () ->
+    BenchmarkTest("ArrayQueue", { () ->
         val q = ArrayQueue<Int>()
         basicQueueTest(q)
-    })
+    }, BenchmarkTest.defaultLoopCount)
 
-    Test("LinkedQueue", { () ->
+    BenchmarkTest("LinkedQueue", { () ->
         val q = LinkedQueue<Int>()
         basicQueueTest(q)
-    })
+    }, BenchmarkTest.defaultLoopCount)
 }
 

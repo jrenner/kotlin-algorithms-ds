@@ -1,21 +1,36 @@
 package algorithms.fundamental.list
 
-import java.util.HashSet
-
-public class LinkedList<T> : Iterable<T> {
-    var first: Node<T>? = null
-    var last: Node<T>? = null
+public class DoubleLinkedList<T> : Iterable<T> {
+    var first: DoubleNode<T>? = null
+    var last: DoubleNode<T>? = null
     var size = 0
 
     override fun iterator(): Iterator<T> {
-        return LinkedListIterator<T>(first)
+        return DoubleLinkedListIterator<T>(first)
     }
 
-    private inner class LinkedListIterator<T>(startHead: Node<T>?) : Iterator<T> {
-        var head: Node<T>? = startHead
+    fun reverseIterator(): Iterator<T> {
+        return DoubleLinkedListReverseIterator<T>(last)
+    }
+
+    private inner class DoubleLinkedListIterator<T>(startHead: DoubleNode<T>?) : Iterator<T> {
+        var head: DoubleNode<T>? = startHead
         override fun next(): T {
             val result = head!!.cargo
             head = head!!.next
+            return result
+        }
+
+        override fun hasNext(): Boolean {
+            return head != null
+        }
+    }
+
+    private inner class DoubleLinkedListReverseIterator<T>(startHead: DoubleNode<T>?) : Iterator<T> {
+        var head: DoubleNode<T>? = startHead
+        override fun next(): T {
+            val result = head!!.cargo
+            head = head!!.prev
             return result
         }
 
@@ -29,13 +44,14 @@ public class LinkedList<T> : Iterable<T> {
     }
 
     fun add(item: T) {
-        val node = Node<T>(item)
-        // check for empty state
+        val node = DoubleNode<T>(item)
         if (first == null) {
             first = node
         }
-        // last should not be null if first is confirmed not null
-        if (last != null) last!!.next = node
+        if (last != null) {
+            last!!.next = node
+            node.prev = last
+        }
         last = node
         size++
     }
@@ -43,23 +59,23 @@ public class LinkedList<T> : Iterable<T> {
     /** Returns true if the item was removed */
     fun remove(item: T): Boolean {
         if (first == null) return false
-        var prev: Node<T>? = null
         var head = first
         while (head != null) {
             if (head!!.cargo == item) {
                 // found item
-                if (prev == null) {
+                if (head == first) {
                     first = head!!.next
                 } else {
-                    prev!!.next = head!!.next
+                    head!!.prev!!.next = head!!.next
                 }
                 if (head == last) {
-                    last = prev
+                    last = head!!.prev
+                } else {
+                    head!!.next!!.prev = head!!.prev
                 }
                 size--
                 return true
             }
-            prev = head
             head = head!!.next
         }
         return false
@@ -78,6 +94,7 @@ public class LinkedList<T> : Iterable<T> {
         while (head != null) {
             val nextNode = head!!.next
             head!!.next = null
+            head!!.prev = null
             head = nextNode
         }
         size = 0
@@ -92,6 +109,8 @@ public class LinkedList<T> : Iterable<T> {
     }
 }
 
-private class Node<T>(val cargo: T) {
-    var next: Node<T>? = null
+
+private class DoubleNode<T>(val cargo: T) {
+    var prev: DoubleNode<T>? = null
+    var next: DoubleNode<T>? = null
 }
