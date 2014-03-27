@@ -18,6 +18,8 @@ fun main(args: Array<String>) {
     createBagTests()
     createQueueTests()
     createLinkedListTests()
+    createStackTests()
+    createBinarySearchTreeTests()
 
     for (test in tests) {
         println("Running test: ${test.name}")
@@ -25,18 +27,24 @@ fun main(args: Array<String>) {
     }
 }
 
+val DO_BENCHMARKING = false
+
 public class BenchmarkTest(name: String, testFunc: () -> Unit, val loopCount: Int) : Test(name, testFunc) {
     class object {
         val defaultLoopCount = 1000
     }
 
     override val runTest = {
-        val start = System.currentTimeMillis()
-        for (n in 1..loopCount) {
+        if (DO_BENCHMARKING) {
+            val start = System.currentTimeMillis()
+            for (n in 1..loopCount) {
+                testFunc()
+            }
+            val timeTaken = System.currentTimeMillis() - start
+            println("\ttime: ${timeTaken} ms")
+        } else {
             testFunc()
         }
-        val timeTaken = System.currentTimeMillis() - start
-        println("\ttime: ${timeTaken} ms")
     }
 }
 

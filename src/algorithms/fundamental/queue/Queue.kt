@@ -1,12 +1,13 @@
 package algorithms.fundamental.queue
 
+/** FIFO Queue */
 public trait Queue<T> : Iterable<T> {
 
     override fun iterator(): Iterator<T>
 
-    fun put(item: T)
+    fun push(item: T)
 
-    fun get(): T
+    fun pop(): T
 
     fun clear()
 

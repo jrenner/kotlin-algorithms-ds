@@ -2,7 +2,7 @@ package algorithms.fundamental.queue
 
 import algorithms.fundamental.list.LinkedList
 
-/** A Queue with a backing linked list */
+/** FIFO Queue with a backing linked list */
 public class LinkedQueue<T> : Queue<T> {
     val items = LinkedList<T>()
 
@@ -10,11 +10,11 @@ public class LinkedQueue<T> : Queue<T> {
         return items.iterator()
     }
 
-    override fun put(item: T) {
+    override fun push(item: T) {
         items.add(item)
     }
 
-    override fun get(): T {
+    override fun pop(): T {
         return items.removeFirst()
     }
 

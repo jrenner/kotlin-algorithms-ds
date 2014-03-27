@@ -3,7 +3,7 @@ package algorithms.fundamental.queue
 import util.NonNullArrayIterator
 import java.util.ArrayList
 
-/** A Queue with a backing array */
+/** FIFO Queue with a backing array */
 public class ArrayQueue<T> : Queue<T> {
     val DEFAULT_INIT_CAPACITY = 8
     val RESIZE_MULTIPLE = 2f
@@ -16,7 +16,7 @@ public class ArrayQueue<T> : Queue<T> {
         return NonNullArrayIterator(items)
     }
 
-    override fun put(item: T) {
+    override fun push(item: T) {
         if (items[last] != null) last++
         if (last >= items.size) {
             resize((itemCount * RESIZE_MULTIPLE).toInt())
@@ -28,7 +28,7 @@ public class ArrayQueue<T> : Queue<T> {
 
     val SHRINK_THRESHOLD = 0.25f
 
-    override fun get(): T {
+    override fun pop(): T {
         val item = items[first]
         items[first] = null
         first++

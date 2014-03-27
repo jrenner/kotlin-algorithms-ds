@@ -174,4 +174,8 @@ val doubleTest = { (list: DoubleLinkedList<Int>) ->
     for (item in list.reverseIterator()) {
         assert(item == expectedReversedItems[i++])
     }
+
+    list.clear()
+    for (n in 1..5) list add n
+    for (n in 5..1) assert(list.removeLast() == n)
 }

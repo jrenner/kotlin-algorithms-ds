@@ -71,6 +71,12 @@ public class LinkedList<T> : Iterable<T> {
         return result
     }
 
+    fun removeLast(): T {
+        val result = last!!.cargo
+        remove(last!!.cargo)
+        return result
+    }
+
     fun clear() {
         var head = first
         first = null
