@@ -1,9 +1,9 @@
 package test
 
-import algorithms.fundamental.queue.Queue
-import algorithms.fundamental.queue.ArrayQueue
+import datastructs.fundamental.queue.Queue
+import datastructs.fundamental.queue.ArrayQueue
 import java.util.ArrayList
-import algorithms.fundamental.queue.LinkedQueue
+import datastructs.fundamental.queue.LinkedQueue
 
 fun createQueueTests() {
     val basicQueueTest = {(q : Queue<Int>) ->

@@ -1,7 +1,7 @@
-package algorithms.fundamental.bag
+package datastructs.fundamental.bag
 
 import util.plus
-import algorithms.fundamental.list.LinkedList
+import datastructs.fundamental.list.LinkedList
 
 /** A Bag with a backing linked list */
 public class LinkedBag<T> : Bag<T> {

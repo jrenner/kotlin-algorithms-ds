@@ -1,6 +1,6 @@
 package test
 
-import algorithms.tree.BinarySearchTree
+import datastructs.tree.BinarySearchTree
 import java.util.ArrayList
 import java.util.Random
 

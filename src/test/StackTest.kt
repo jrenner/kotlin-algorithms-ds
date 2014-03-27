@@ -1,7 +1,7 @@
 package test
 
-import algorithms.fundamental.stack.Stack
-import algorithms.fundamental.stack.LinkedStack
+import datastructs.fundamental.stack.Stack
+import datastructs.fundamental.stack.LinkedStack
 
 fun createStackTests() {
     val basicStackTest = {(stack: Stack<Int>) ->

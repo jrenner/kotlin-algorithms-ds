@@ -1,4 +1,4 @@
-package algorithms.tree
+package datastructs.tree
 
 import java.util.ArrayList
 import java.util.HashMap

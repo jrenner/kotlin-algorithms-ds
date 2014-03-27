@@ -1,4 +1,4 @@
-package algorithms.fundamental.list
+package datastructs.fundamental.list
 
 public class DoubleLinkedList<T> : Iterable<T> {
     var first: DoubleNode<T>? = null

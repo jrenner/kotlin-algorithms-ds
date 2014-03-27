@@ -1,8 +1,8 @@
 package test
 
-import algorithms.fundamental.bag.ArrayBag
-import algorithms.fundamental.bag.LinkedBag
-import algorithms.fundamental.bag.Bag
+import datastructs.fundamental.bag.ArrayBag
+import datastructs.fundamental.bag.LinkedBag
+import datastructs.fundamental.bag.Bag
 
 fun createBagTests() {
     val basicBagTest = { (bag: Bag<Int>) ->

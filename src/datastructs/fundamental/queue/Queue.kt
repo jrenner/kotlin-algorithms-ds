@@ -1,4 +1,4 @@
-package algorithms.fundamental.queue
+package datastructs.fundamental.queue
 
 /** FIFO Queue */
 public trait Queue<T> : Iterable<T> {

@@ -1,7 +1,7 @@
 package test
 
-import algorithms.fundamental.list.LinkedList
-import algorithms.fundamental.list.DoubleLinkedList
+import datastructs.fundamental.list.LinkedList
+import datastructs.fundamental.list.DoubleLinkedList
 
 fun createLinkedListTests() {
     Test("(Single) LinkedList", { () ->

@@ -1,4 +1,4 @@
-package algorithms.fundamental.queue
+package datastructs.fundamental.queue
 
 import util.NonNullArrayIterator
 import java.util.ArrayList

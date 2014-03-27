@@ -1,6 +1,6 @@
-package algorithms.fundamental.queue
+package datastructs.fundamental.queue
 
-import algorithms.fundamental.list.LinkedList
+import datastructs.fundamental.list.LinkedList
 
 /** FIFO Queue with a backing linked list */
 public class LinkedQueue<T> : Queue<T> {

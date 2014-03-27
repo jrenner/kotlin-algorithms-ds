@@ -1,4 +1,4 @@
-package algorithms.fundamental.bag
+package datastructs.fundamental.bag
 
 import java.util.ArrayList
 import util.plus

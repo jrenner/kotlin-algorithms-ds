@@ -1,6 +1,6 @@
-package algorithms.fundamental.stack
+package datastructs.fundamental.stack
 
-import algorithms.fundamental.list.LinkedList
+import datastructs.fundamental.list.LinkedList
 
 /** FILO Stack backed by linked list */
 public class LinkedStack<T> : Stack<T> {

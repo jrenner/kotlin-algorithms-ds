@@ -1,4 +1,4 @@
-package algorithms.fundamental.bag
+package datastructs.fundamental.bag
 
 import util.plus
 

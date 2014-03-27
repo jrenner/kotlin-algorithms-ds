@@ -1,4 +1,4 @@
-package algorithms.fundamental.list
+package datastructs.fundamental.list
 
 import java.util.HashSet
 

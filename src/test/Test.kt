@@ -1,8 +1,8 @@
 package test
 
 import java.util.ArrayList
-import algorithms.fundamental.bag.ArrayBag
-import algorithms.fundamental.bag.Bag
+import datastructs.fundamental.bag.ArrayBag
+import datastructs.fundamental.bag.Bag
 
 val tests = ArrayList<Test>()
 

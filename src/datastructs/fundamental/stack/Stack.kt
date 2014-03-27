@@ -1,4 +1,4 @@
-package algorithms.fundamental.stack
+package datastructs.fundamental.stack
 
 /** FILO Stack */
 public trait Stack<T> : Iterable<T> {
